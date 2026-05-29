@@ -6,13 +6,42 @@ import { personal } from "@/data/portfolio";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const BASE_URL = "https://vamsidharreddy.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: `${personal.name} — ${personal.title}`,
   description: personal.tagline,
+  keywords: [
+    "Vamsidhar Reddy Poothi",
+    "Senior Software Engineer",
+    "Distributed Systems",
+    "Cloud Native",
+    "Platform Engineering",
+    "Microsoft",
+    "Azure",
+    "AWS",
+    "Full Stack Developer",
+    "Dallas TX",
+  ],
+  authors: [{ name: personal.name, url: personal.github }],
   openGraph: {
     title: `${personal.name} — ${personal.title}`,
     description: personal.tagline,
+    url: BASE_URL,
+    siteName: `${personal.name} Portfolio`,
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${personal.name} — ${personal.title}`,
+    description: personal.tagline,
+    creator: "@vamsidhar12",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
