@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vamsidhar Reddy Poothi — Personal Portfolio
+
+A responsive, interactive personal portfolio built with **Next.js 16**, **Tailwind CSS v4**, and **Framer Motion**. Shipped using [Claude Code](https://claude.ai/code).
+
+🌐 **Live:** _coming soon_
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion 12 |
+| Language | TypeScript |
+| Icons | Lucide React + inline SVGs |
+| Images | Next.js `<Image>` (Credly CDN) |
+| Contact form | Formspree |
+| Deployment | Vercel (planned) |
+
+---
+
+## Sections
+
+- **Hero** — Name, title, tagline, CTA buttons, social links, animated scroll indicator
+- **About** — Profile photo, bio, production stats row, cloud certification badges
+- **Skills** — Languages · Cloud & Infra · DevOps & Security · Databases
+- **Projects** — Featured card grid with tech tags, GitHub and live demo links
+- **Experience** — Alternating timeline: Microsoft → Paycom → TCS
+- **Interests** — Icon grid with a fun quote
+- **Contact** — Formspree-wired message form + social link cards
+
+---
+
+## File Structure
+
+```
+my-portfolio/
+├── public/
+│   └── image.jpeg              # Profile photo
+│
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css         # Tailwind v4 import, dark mode variant, scrollbar styles
+│   │   ├── layout.tsx          # Root layout — meta tags, anti-FOUC dark mode script
+│   │   └── page.tsx            # Composes all sections
+│   │
+│   ├── components/
+│   │   ├── About.tsx           # Photo, bio, stats row, certification badges
+│   │   ├── Contact.tsx         # Formspree form + social link cards
+│   │   ├── Experience.tsx      # Alternating timeline
+│   │   ├── Footer.tsx          # Copyright + social icons
+│   │   ├── Hero.tsx            # Full-screen landing with animations
+│   │   ├── icons.tsx           # Inline SVG brand icons (GitHub, LinkedIn, LeetCode, X)
+│   │   ├── Interests.tsx       # Icon grid + quote
+│   │   ├── Navbar.tsx          # Sticky nav, mobile hamburger, dark mode toggle
+│   │   ├── Projects.tsx        # Card grid with show-all toggle
+│   │   ├── SectionWrapper.tsx  # Scroll-triggered fade-in wrapper + heading helpers
+│   │   └── Skills.tsx          # Color-coded category cards with badge pills
+│   │
+│   ├── data/
+│   │   └── portfolio.ts        # All content (personal info, skills, projects, experience)
+│   │
+│   └── hooks/
+│       └── useDarkMode.ts      # Dark mode toggle with localStorage persistence
+│
+├── next.config.ts              # Allows images from images.credly.com
+├── package.json
+└── tsconfig.json
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
+
+# Production build
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Personalisation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All content lives in one file — **`src/data/portfolio.ts`**:
 
-## Learn More
+| Export | What it controls |
+|---|---|
+| `personal` | Name, title, tagline, bio, location, social links, resume URL |
+| `stats` | Four production metric cards in the About section |
+| `skills` | Categorised tech stack (Languages / Cloud & Infra / DevOps & Security / Databases) |
+| `certifications` | Badge images, Credly/Microsoft credential links, in-progress status |
+| `projects` | Title, description, tech tags, GitHub and live URLs |
+| `experience` | Company, role, date range, bullet points |
+| `interests` | Lucide icon name + label |
 
-To learn more about Next.js, take a look at the following resources:
+### Adding a profile photo
+Drop your image at `public/image.jpeg`. The `About` component renders it automatically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Wiring up the contact form
+1. Sign up at [formspree.io](https://formspree.io)
+2. Create a new form → copy the endpoint URL
+3. In `src/components/Contact.tsx` replace the `FORMSPREE_URL` value with your endpoint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Updating your resume
+Host your PDF anywhere (GitHub raw, Google Drive, etc.) and update `resumeUrl` in `src/data/portfolio.ts`.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dark Mode
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dark mode is class-based (`dark` on `<html>`). An inline script in `layout.tsx` reads `localStorage` before React hydrates, preventing any flash of the wrong theme. The user's preference is persisted across sessions.
+
+---
+
+## License
+
+MIT
