@@ -2,7 +2,7 @@
 
 A responsive, interactive personal portfolio built with **Next.js 16**, **Tailwind CSS v4**, and **Framer Motion**. Shipped using [Claude Code](https://claude.ai/code).
 
-🌐 **Live:** _coming soon_
+🌐 **Live:** https://vamsidharreddy.vercel.app
 
 ---
 
@@ -17,7 +17,7 @@ A responsive, interactive personal portfolio built with **Next.js 16**, **Tailwi
 | Icons | Lucide React + inline SVGs |
 | Images | Next.js `<Image>` (Credly CDN) |
 | Contact form | Formspree |
-| Deployment | Vercel (planned) |
+| Deployment | Vercel |
 
 ---
 
@@ -113,6 +113,38 @@ Drop your image at `public/image.jpeg`. The `About` component renders it automat
 
 ### Updating your resume
 Host your PDF anywhere (GitHub raw, Google Drive, etc.) and update `resumeUrl` in `src/data/portfolio.ts`.
+
+---
+
+## Deployment
+
+Hosted on **Vercel** at https://vamsidharreddy.vercel.app.
+
+### First-time setup
+```bash
+# Install Vercel CLI
+brew install vercel-cli        # macOS
+# or: npm i -g vercel
+
+# Link project to Vercel
+vercel link
+
+# Deploy preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+### Subsequent deploys
+Every push to `main` on GitHub triggers an automatic production redeploy via the Vercel Git integration.
+
+### Environment / config
+| File | Purpose |
+|---|---|
+| `src/app/layout.tsx` | `BASE_URL` — update if the domain changes |
+| `public/robots.txt` | Sitemap URL — update to match the live domain |
+| `src/components/Contact.tsx` | `FORMSPREE_URL` — Formspree form endpoint |
 
 ---
 

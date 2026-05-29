@@ -70,6 +70,20 @@ npx tsc --noEmit  # type-check without emitting
 | `src/components/Contact.tsx` | Formspree form + social links |
 | `src/components/Footer.tsx` | Copyright + social icons |
 
+## Deployment
+
+Hosted on **Vercel** — https://vamsidharreddy.vercel.app
+
+```bash
+vercel          # preview deployment
+vercel --prod   # production deployment
+```
+
+- Project is linked via `.vercel/project.json` (gitignored)
+- `BASE_URL` in `src/app/layout.tsx` is set to the live Vercel domain — update if the domain changes
+- `public/robots.txt` Sitemap URL should match the live domain
+- Git integration: pushing to `main` auto-deploys to production
+
 ## Contact Form
 
 Uses Formspree. The endpoint URL is set as `FORMSPREE_URL` in `src/components/Contact.tsx`. To change the destination, replace that value with a new Formspree form endpoint.
