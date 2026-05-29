@@ -6,7 +6,7 @@ import { personal } from "@/data/portfolio";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const BASE_URL = "https://vamsidharreddy.dev"; // update once deployed
+const BASE_URL = "https://vamsidharreddy.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
