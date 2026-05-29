@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+  border-radius: 99px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #4338ca;
+}
+
+/* Selection highlight */
+::selection {
+  background: #6366f1;
+  color: #fff;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+
+.dark body {
+  background: #030712;
+  color: #f9fafb;
+}
