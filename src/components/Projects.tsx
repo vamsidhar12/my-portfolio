@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons";
@@ -30,11 +31,15 @@ export default function Projects() {
               {/* Gradient accent on hover */}
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-              {/* Image placeholder */}
-              <div className="w-full h-40 rounded-xl bg-linear-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 mb-5 flex items-center justify-center">
-                <span className="text-4xl font-black text-indigo-300 dark:text-indigo-600 select-none">
-                  {project.title.charAt(0)}
-                </span>
+              {/* Project image */}
+              <div className="relative w-full h-40 rounded-xl overflow-hidden mb-5">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
               </div>
 
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
