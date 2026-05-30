@@ -142,9 +142,9 @@ export default function Contact() {
                 <div className="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
                   <Icon size={18} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs font-semibold text-gray-500 dark:text-gray-400">{label}</div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors break-all">
                     {handle}
                   </div>
                 </div>
