@@ -49,11 +49,6 @@ export default function Hero() {
           </motion.div>
         )}
 
-        {/* Greeting */}
-        <motion.p variants={item} className="text-lg text-gray-500 dark:text-gray-400 mb-2">
-          Hi there, I&apos;m
-        </motion.p>
-
         {/* Name */}
         <motion.h1
           variants={item}

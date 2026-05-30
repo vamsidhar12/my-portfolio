@@ -27,9 +27,11 @@ Personal portfolio for **Vamsidhar Reddy Poothi** built with Next.js 16, Tailwin
 - The `ease` property in `Transition` must be a cubic-bezier array `[n, n, n, n]`, not a plain string like `"easeOut"` — TypeScript will reject it
 - Example: `{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }`
 
-### External Images
-- Credly badge images are allowed via `next.config.ts` (`images.credly.com` remote pattern)
-- Add new external image domains there before using `<Image src="https://..."/>`
+### Images
+- All local images live in `public/images/` — profile photo at `public/images/profile.jpeg`, project screenshots alongside it
+- Reference them with a leading slash: `src="/images/profile.jpeg"`
+- Credly badge images (remote) are allowed via `next.config.ts` (`images.credly.com` remote pattern)
+- Add new external image domains to `next.config.ts` before using `<Image src="https://..."/>`
 
 ## All Content Lives in One File
 
@@ -64,7 +66,7 @@ npx tsc --noEmit  # type-check without emitting
 | `src/components/Hero.tsx` | Full-screen landing section |
 | `src/components/About.tsx` | Photo, bio, stats row, certification badges |
 | `src/components/Skills.tsx` | Color-coded skill category cards |
-| `src/components/Projects.tsx` | Card grid with show-all toggle |
+| `src/components/Projects.tsx` | Card grid with project images (`public/images/`) and show-all toggle |
 | `src/components/Experience.tsx` | Alternating timeline |
 | `src/components/Interests.tsx` | Icon grid + quote |
 | `src/components/Contact.tsx` | Formspree form + social links |

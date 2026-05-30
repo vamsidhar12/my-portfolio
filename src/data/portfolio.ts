@@ -3,14 +3,11 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const personal = {
-  name: "Vamsidhar Reddy Poothi",
+  name: "Vamsidharrrr Reddy Poothi",
   initials: "VRP",
   title: "Senior Software Engineer",
-  tagline: "Building fault-tolerant, high-availability distributed systems at production scale.",
-  bio: `Senior Software Engineer with 5+ years of experience building fault-tolerant,
-high-availability distributed systems at Microsoft, full stack experience at Paycom, and as a System Engineer at TCS.
-I specialize in cloud-native backend, platform engineering, and distributed architecture —
-turning complex reliability challenges into clean, resilient systems.
+  tagline: "A bug is just an undocumented feature waiting to disappoint someone.",
+  bio: `Senior Software Engineer with 5+ years of experience building fault-tolerant, high-availability distributed systems at Microsoft, full stack experience at Paycom, and as a System Engineer at TCS. I specialize in cloud-native backend, platform engineering, and distributed architecture — turning complex reliability challenges into clean, resilient systems.
 
 M.S. Computer Science (GPA 4.0) — Texas Tech University`,
   location: "Dallas, TX, USA",
@@ -89,6 +86,7 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
+    image: "/images/DistributedSystems.jpeg",
   },
   {
     id: 2,
@@ -99,6 +97,7 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
+    image: "/images/CloudComputing.png",
   },
   {
     id: 3,
@@ -109,6 +108,7 @@ export const projects = [
     github: "",
     live: "",
     featured: false,
+    image: "/images/Vulnerability.png",
   },
   {
     id: 4,
@@ -119,6 +119,7 @@ export const projects = [
     github: "https://github.com/vamsidhar12",
     live: "",
     featured: false,
+    image: "/images/Portfolio.png",
   },
 ];
 

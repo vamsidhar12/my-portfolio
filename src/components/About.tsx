@@ -15,7 +15,7 @@ export default function About() {
           <div className="relative">
             <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/30">
               <Image
-                src="/image.jpeg"
+                src="/images/profile.jpeg"
                 alt={personal.name}
                 width={288}
                 height={288}
