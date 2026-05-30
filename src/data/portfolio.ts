@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const personal = {
-  name: "Vamsidharrrr Reddy Poothi",
+  name: "Vamsidhar Reddy Poothi",
   initials: "VRP",
   title: "Senior Software Engineer",
   tagline: "A bug is just an undocumented feature waiting to disappoint someone.",
