@@ -86,7 +86,7 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
-    image: "/DistributedSystems.jpeg",
+    image: "/images/DistributedSystems.jpeg",
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
-    image: "/CloudComputing.png",
+    image: "/images/CloudComputing.png",
   },
   {
     id: 3,
@@ -108,7 +108,7 @@ export const projects = [
     github: "",
     live: "",
     featured: false,
-    image: "/Vulnerability.png",
+    image: "/images/Vulnerability.png",
   },
   {
     id: 4,
@@ -119,7 +119,7 @@ export const projects = [
     github: "https://github.com/vamsidhar12",
     live: "",
     featured: false,
-    image: "/Portfolio.png",
+    image: "/images/Portfolio.png",
   },
 ];
 

@@ -15,18 +15,19 @@ A responsive, interactive personal portfolio built with **Next.js 16**, **Tailwi
 | Animations | Framer Motion 12 |
 | Language | TypeScript |
 | Icons | Lucide React + inline SVGs |
-| Images | Next.js `<Image>` (Credly CDN) |
+| Images | Next.js `<Image>` (local + Credly CDN) |
 | Contact form | Formspree |
+| Analytics | Vercel Analytics + Speed Insights |
 | Deployment | Vercel |
 
 ---
 
 ## Sections
 
-- **Hero** — Name, title, tagline, CTA buttons, social links, animated scroll indicator
+- **Hero** — Name, title, tagline, CTA buttons, social links, animated scroll indicator (greeting removed for a cleaner look)
 - **About** — Profile photo, bio, production stats row, cloud certification badges
 - **Skills** — Languages · Cloud & Infra · DevOps & Security · Databases
-- **Projects** — Featured card grid with tech tags, GitHub and live demo links
+- **Projects** — Featured card grid with project screenshots, tech tags, GitHub and live demo links
 - **Experience** — Alternating timeline: Microsoft → Paycom → TCS
 - **Interests** — Icon grid with a fun quote
 - **Contact** — Formspree-wired message form + social link cards
@@ -38,13 +39,19 @@ A responsive, interactive personal portfolio built with **Next.js 16**, **Tailwi
 ```
 my-portfolio/
 ├── public/
-│   └── image.jpeg              # Profile photo
+│   ├── images/
+│   │   ├── profile.jpeg              # Profile photo (used in About section)
+│   │   ├── DistributedSystems.jpeg   # Project card image
+│   │   ├── CloudComputing.png        # Project card image
+│   │   ├── Vulnerability.png         # Project card image
+│   │   └── Portfolio.png             # Project card image
+│   └── robots.txt
 │
 ├── src/
 │   ├── app/
 │   │   ├── favicon.ico
 │   │   ├── globals.css         # Tailwind v4 import, dark mode variant, scrollbar styles
-│   │   ├── layout.tsx          # Root layout — meta tags, anti-FOUC dark mode script
+│   │   ├── layout.tsx          # Root layout — meta, anti-FOUC script, Analytics, SpeedInsights
 │   │   └── page.tsx            # Composes all sections
 │   │
 │   ├── components/
@@ -56,7 +63,7 @@ my-portfolio/
 │   │   ├── icons.tsx           # Inline SVG brand icons (GitHub, LinkedIn, LeetCode, X)
 │   │   ├── Interests.tsx       # Icon grid + quote
 │   │   ├── Navbar.tsx          # Sticky nav, mobile hamburger, dark mode toggle
-│   │   ├── Projects.tsx        # Card grid with show-all toggle
+│   │   ├── Projects.tsx        # Card grid with project images and show-all toggle
 │   │   ├── SectionWrapper.tsx  # Scroll-triggered fade-in wrapper + heading helpers
 │   │   └── Skills.tsx          # Color-coded category cards with badge pills
 │   │
@@ -104,7 +111,10 @@ All content lives in one file — **`src/data/portfolio.ts`**:
 | `interests` | Lucide icon name + label |
 
 ### Adding a profile photo
-Drop your image at `public/image.jpeg`. The `About` component renders it automatically.
+Drop your image at `public/images/profile.jpeg`. The `About` component renders it automatically.
+
+### Adding project images
+Place images in `public/images/` and set the `image` field on the relevant entry in `src/data/portfolio.ts` (e.g. `image: "/images/MyProject.png"`). `Projects.tsx` picks it up automatically via `next/image`.
 
 ### Wiring up the contact form
 1. Sign up at [formspree.io](https://formspree.io)
