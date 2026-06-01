@@ -10,7 +10,7 @@ const SOCIALS = [
   { href: personal.github, Icon: GithubIcon, label: "GitHub", handle: "@vamsidhar12" },
   { href: personal.linkedin, Icon: LinkedinIcon, label: "LinkedIn", handle: "in/vamsidhar-reddy-poothi" },
   { href: personal.leetcode, Icon: LeetcodeIcon, label: "LeetCode", handle: "Vamsidhar12" },
-  { href: `mailto:${personal.email}`, Icon: MailIcon, label: "Email", handle: personal.email },
+  { href: null, Icon: MailIcon, label: "Email", handle: personal.email },
 ];
 
 export default function Contact() {
@@ -131,25 +131,31 @@ export default function Contact() {
             about tech — my inbox is always open.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {SOCIALS.map(({ href, Icon, label, handle }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-indigo-400 dark:hover:border-indigo-600 hover:shadow-md transition-all group"
-              >
-                <div className="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
-                  <Icon size={18} />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-semibold text-gray-500 dark:text-gray-400">{label}</div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors break-all">
-                    {handle}
+            {SOCIALS.map(({ href, Icon, label, handle }) => {
+              const inner = (
+                <>
+                  <div className="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                    <Icon size={18} />
                   </div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-semibold text-gray-500 dark:text-gray-400">{label}</div>
+                    <div className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors break-all">
+                      {handle}
+                    </div>
+                  </div>
+                </>
+              );
+              const baseClass = "flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 transition-all group";
+              return href ? (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={`${baseClass} hover:border-indigo-400 dark:hover:border-indigo-600 hover:shadow-md`}>
+                  {inner}
+                </a>
+              ) : (
+                <div key={label} className={baseClass}>
+                  {inner}
                 </div>
-              </a>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

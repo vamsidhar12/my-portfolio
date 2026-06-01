@@ -17,10 +17,10 @@ const item: Variants = {
 };
 
 const SOCIALS = [
-  { href: personal.github, Icon: GithubIcon, label: "GitHub" },
-  { href: personal.linkedin, Icon: LinkedinIcon, label: "LinkedIn" },
-  { href: personal.leetcode, Icon: LeetcodeIcon, label: "LeetCode" },
-  { href: `mailto:${personal.email}`, Icon: MailIcon, label: "Email" },
+  { href: personal.github, Icon: GithubIcon, label: "GitHub", external: true },
+  { href: personal.linkedin, Icon: LinkedinIcon, label: "LinkedIn", external: true },
+  { href: personal.leetcode, Icon: LeetcodeIcon, label: "LeetCode", external: true },
+  { href: "#contact", Icon: MailIcon, label: "Email", external: false },
 ];
 
 export default function Hero() {
@@ -97,12 +97,12 @@ export default function Hero() {
 
         {/* Social icons */}
         <motion.div variants={item} className="flex items-center justify-center gap-5">
-          {SOCIALS.map(({ href, Icon, label }) => (
+          {SOCIALS.map(({ href, Icon, label, external }) => (
             <a
               key={label}
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
               aria-label={label}
               className="text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
