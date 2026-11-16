@@ -143,7 +143,7 @@ export const projects = [
     github: "https://github.com/vamsidhar12",
     live: "",
     featured: true,
-    image: "/images/Portfolio.png",
+    image: "/images/portfolio-hero.jpg",
   },
 ];
 
