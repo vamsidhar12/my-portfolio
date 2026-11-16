@@ -32,7 +32,7 @@ export default function Projects() {
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
               {/* Project image */}
-              <div className="relative w-full h-40 rounded-xl overflow-hidden mb-5">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-5">
                 <Image
                   src={project.image}
                   alt={project.title}
