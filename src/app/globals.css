@@ -39,3 +39,9 @@ body {
   background: #030712;
   color: #f9fafb;
 }
+
+/* Visible keyboard focus */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}

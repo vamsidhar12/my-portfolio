@@ -14,7 +14,8 @@ const SOCIALS = [
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", _gotcha: "" });
+  const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
 
@@ -23,7 +24,9 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (form._gotcha) return; // honeypot: bots fill hidden fields
     setSending(true);
+    setError("");
     const FORMSPREE_URL = "https://formspree.io/f/xjgzzekd";
     try {
       const res = await fetch(FORMSPREE_URL, {
@@ -32,6 +35,9 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
       if (res.ok) setSent(true);
+      else throw new Error("failed");
+    } catch {
+      setError(`Something went wrong. Please try again or email me at ${personal.email}.`);
     } finally {
       setSending(false);
     }
@@ -59,7 +65,7 @@ export default function Contact() {
                 Thanks for reaching out. I&apos;ll get back to you soon.
               </p>
               <button
-                onClick={() => { setSent(false); setForm({ name: "", email: "", message: "" }); }}
+                onClick={() => { setSent(false); setForm({ name: "", email: "", message: "", _gotcha: "" }); }}
                 className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
               >
                 Send another
@@ -68,10 +74,11 @@ export default function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Name
                 </label>
                 <input
+                  id="contact-name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
@@ -81,10 +88,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Email
                 </label>
                 <input
+                  id="contact-email"
                   name="email"
                   type="email"
                   value={form.email}
@@ -95,10 +103,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                <label htmlFor="contact-message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
@@ -108,6 +117,21 @@ export default function Contact() {
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"
                 />
               </div>
+              <input
+                type="text"
+                name="_gotcha"
+                value={form._gotcha}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+              {error && (
+                <p role="alert" className="text-sm text-red-600 dark:text-red-400">
+                  {error}
+                </p>
+              )}
               <button
                 type="submit"
                 disabled={sending}

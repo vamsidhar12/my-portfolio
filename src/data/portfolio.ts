@@ -7,6 +7,9 @@ export const personal = {
   initials: "VRP",
   title: "Senior Software Engineer",
   tagline: "A bug is just an undocumented feature waiting to disappoint someone.",
+  headline: "I build reliable, secure distributed systems on Azure and Kubernetes.",
+  siteDescription:
+    "Senior Software Engineer in Dallas, TX specializing in cloud-native backend, distributed systems, and platform engineering. Former Microsoft engineer; open to Mid-level and Senior roles.",
   bio: `Senior Software Engineer with 5+ years of experience building fault-tolerant, high-availability distributed systems at Microsoft, full stack experience at Paycom, and as a System Engineer at TCS. I specialize in cloud-native backend, platform engineering, and distributed architecture — turning complex reliability challenges into clean, resilient systems.
 
 M.S. Computer Science (GPA 4.0) — Texas Tech University`,
@@ -107,7 +110,7 @@ export const projects = [
     tech: ["Splunk", "VMWare", "Microsoft Admin Center", "PowerShell", "Altiris/Symantec"],
     github: "",
     live: "",
-    featured: false,
+    featured: true,
     image: "/images/Vulnerability.png",
   },
   {
@@ -118,8 +121,25 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/vamsidhar12",
     live: "",
-    featured: false,
+    featured: true,
     image: "/images/Portfolio.png",
+  },
+];
+
+export const education = [
+  {
+    id: 1,
+    school: "Texas Tech University",
+    degree: "M.S. in Computer Science",
+    detail: "GPA 4.0 / 4.0",
+    period: "Aug 2019 – May 2021 · Lubbock, TX",
+  },
+  {
+    id: 2,
+    school: "Andhra University",
+    degree: "B.Tech in Computer Science",
+    detail: "GPA 8.0 / 10",
+    period: "Sep 2014 – May 2018 · Visakhapatnam, India",
   },
 ];
 

@@ -64,10 +64,16 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Tagline */}
+        {/* Headline + tagline */}
         <motion.p
           variants={item}
-          className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto mb-10"
+          className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 max-w-xl mx-auto mb-3"
+        >
+          {personal.headline}
+        </motion.p>
+        <motion.p
+          variants={item}
+          className="text-sm sm:text-base italic text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-10"
         >
           {personal.tagline}
         </motion.p>
@@ -77,22 +83,26 @@ export default function Hero() {
           variants={item}
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
-          <button
-            onClick={() =>
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-            }
+          <a
+            href="#projects"
             className="px-6 py-3 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-500/30"
           >
             View My Work
-          </button>
-          <button
-            onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-            }
+          </a>
+          <a
+            href={personal.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-xl font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-800 hover:border-indigo-400 transition-colors"
+          >
+            View Resume
+          </a>
+          <a
+            href="#contact"
             className="px-6 py-3 rounded-xl font-semibold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors"
           >
             Get in Touch
-          </button>
+          </a>
         </motion.div>
 
         {/* Social icons */}

@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "./icons";
 import { personal } from "@/data/portfolio";
 
@@ -9,8 +8,7 @@ export default function Footer() {
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
       <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
-          © {year} {personal.name} · Built with{" "}
-          <Heart size={13} className="text-red-500 inline" /> using Next.js &amp; Tailwind
+          © {year} {personal.name} · Built with Next.js &amp; Tailwind
         </p>
 
         <div className="flex items-center gap-4">
