@@ -103,17 +103,6 @@ export const certifications = [
 export const projects = [
   {
     id: 1,
-    title: "Distributed Orchestration Platform",
-    description:
-      "Designed a fault-tolerant orchestration platform in C#/.NET Core managing configuration state transitions across 1,300+ production servers, enabling zero-downtime cloud migrations and eliminating unplanned maintenance windows.",
-    tech: ["C# / .NET Core", "Azure", "Kubernetes", "IaC", "Azure DevOps"],
-    github: "",
-    live: "",
-    featured: true,
-    image: "/images/orchestration.svg",
-  },
-  {
-    id: 2,
     title: "Distributed Observability Platform",
     description:
       "Observability stack built on 30+ Grafana dashboards and 100+ alerts across 1,300+ production servers. Improved MTTD by 20%, made on-call response more efficient, and helped the team meet SLO targets.",
@@ -121,10 +110,10 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
-    image: "/images/observability.svg",
+    image: "/images/DistributedSystems.jpeg",
   },
   {
-    id: 3,
+    id: 2,
     title: "Platform Security Hardening",
     description:
       "Implemented OAuth 2.0 / MSAL, migrated service authentication from mTLS to Proof-of-Possession (PoP) tokens, and extended Azure NSGs to Redis, Key Vault, CosmosDB, and Blob Storage — reducing attack surface and compliance risk.",
@@ -132,10 +121,10 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
-    image: "/images/security.svg",
+    image: "/images/CloudComputing.png",
   },
   {
-    id: 4,
+    id: 3,
     title: "Enterprise Vulnerability Remediation",
     description:
       "Remediated 98% of 12,000 vulnerabilities across production-scale VMware infrastructure for Mars, Incorporated, improving security posture and uptime reliability.",
@@ -143,10 +132,10 @@ export const projects = [
     github: "",
     live: "",
     featured: true,
-    image: "/images/vulnerability.svg",
+    image: "/images/Vulnerability.png",
   },
   {
-    id: 5,
+    id: 4,
     title: "My Portfolio (This Site)",
     description:
       "Personal portfolio built with Next.js 16, Tailwind CSS v4, and Framer Motion. Shipped using Claude Code — an experiment in AI-assisted development.",
@@ -154,7 +143,7 @@ export const projects = [
     github: "https://github.com/vamsidhar12",
     live: "",
     featured: true,
-    image: "/images/portfolio.svg",
+    image: "/images/Portfolio.png",
   },
 ];
 

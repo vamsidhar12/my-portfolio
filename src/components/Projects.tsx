@@ -32,12 +32,12 @@ export default function Projects() {
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
               {/* Project image */}
-              <div className="relative w-full aspect-[17/6] rounded-xl overflow-hidden mb-5 bg-slate-900">
+              <div className="relative w-full h-40 rounded-xl overflow-hidden mb-5">
                 <Image
                   src={project.image}
-                  alt={`${project.title} architecture diagram`}
+                  alt={project.title}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
