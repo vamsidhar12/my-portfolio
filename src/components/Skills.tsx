@@ -4,6 +4,8 @@ import SectionWrapper, { SectionHeading, SectionSubheading } from "./SectionWrap
 import { skills } from "@/data/portfolio";
 
 const CATEGORY_COLORS: Record<string, string> = {
+  "Core & Architecture":
+    "bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-700",
   Languages:
     "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700",
   "Cloud & Infra":
@@ -23,7 +25,7 @@ export default function Skills() {
       <SectionHeading>Skills & Tech</SectionHeading>
       <SectionSubheading>Languages, cloud, security, and data tools I work with daily</SectionSubheading>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(skills).map(([category, items], catIdx) => (
           <motion.div
             key={category}

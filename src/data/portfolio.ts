@@ -10,7 +10,7 @@ export const personal = {
   headline: "I build reliable, secure distributed systems on Azure and Kubernetes.",
   siteDescription:
     "Senior Software Engineer in Dallas, TX specializing in cloud-native backend, distributed systems, and platform engineering. Former Microsoft engineer; open to Mid-level and Senior roles.",
-  bio: `Senior Software Engineer with 5+ years of experience building fault-tolerant, high-availability distributed systems at Microsoft, full stack experience at Paycom, and as a System Engineer at TCS. I specialize in cloud-native backend, platform engineering, and distributed architecture — turning complex reliability challenges into clean, resilient systems.
+  bio: `Senior Software Engineer with 5+ years of experience building fault-tolerant, high-availability distributed systems at Microsoft, full stack experience at Paycom, and as an Associate Systems Engineer at TCS. I specialize in cloud-native backend, platform engineering, and distributed architecture — turning complex reliability challenges into clean, resilient systems.
 
 M.S. Computer Science (GPA 4.0) — Texas Tech University`,
   location: "Dallas, TX, USA",
@@ -30,9 +30,30 @@ export const stats = [
 ];
 
 export const skills: Record<string, string[]> = {
-  Languages: ["C# / .NET Core", "Java", "Python", "TypeScript", "JavaScript", "C++"],
-  "Cloud & Infra": ["Azure", "AWS", "Kubernetes", "Docker", "Terraform", "CosmosDB", "Key Vault", "Blob Storage"],
-  "DevOps & Security": ["Azure DevOps", "CI/CD Pipelines", "Grafana", "App Insights", "OAuth 2.0", "JWT", "mTLS", "MSAL"],
+  "Core & Architecture": [
+    "Distributed Systems",
+    "Microservices",
+    "Event-Driven Architecture",
+    "REST APIs",
+    "High Availability",
+    "Fault Tolerance",
+    "System Design",
+  ],
+  Languages: ["C# / .NET Core", "Java (8/11/17)", "Python", "TypeScript", "JavaScript (ES6+)", "C++"],
+  "Cloud & Infra": ["Azure (AKS)", "AWS", "Kubernetes", "Docker", "Infrastructure as Code", "Key Vault", "Blob Storage"],
+  "DevOps & Security": [
+    "Azure DevOps",
+    "CI/CD & YAML Pipelines",
+    "Git",
+    "Grafana",
+    "App Insights",
+    "OAuth 2.0",
+    "JWT",
+    "MSAL",
+    "PoP Tokens",
+    "mTLS",
+    "Azure NSGs",
+  ],
   Databases: ["SQL Server", "PostgreSQL", "MySQL", "Redis", "CosmosDB"],
 };
 
@@ -84,7 +105,7 @@ export const projects = [
     id: 1,
     title: "Distributed Observability Platform",
     description:
-      "Internal platform to unify metrics, traces, and logs across 1,300+ production servers. Reduced MTTD by 20% and enabled on-call teams to pinpoint incidents in seconds.",
+      "Observability stack built on 30+ Grafana dashboards and 100+ alerts across 1,300+ production servers. Improved MTTD by 20%, made on-call response more efficient, and helped the team meet SLO targets.",
     tech: ["Azure", "Grafana", "App Insights", "Kubernetes", "C#"],
     github: "",
     live: "",
@@ -93,10 +114,10 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Cloud-Native Auth Service",
+    title: "Platform Security Hardening",
     description:
-      "Zero-trust authentication service supporting OAuth 2.0, mTLS, and Proof-of-Possession tokens for multi-tenant SaaS. Secured 100k+ daily active sessions.",
-    tech: ["C# / .NET Core", "Azure", "MSAL", "JWT", "Docker"],
+      "Implemented OAuth 2.0 / MSAL, migrated service authentication from mTLS to Proof-of-Possession (PoP) tokens, and extended Azure NSGs to Redis, Key Vault, CosmosDB, and Blob Storage — reducing attack surface and compliance risk.",
+    tech: ["C# / .NET Core", "Azure", "MSAL", "PoP Tokens", "mTLS", "NSGs"],
     github: "",
     live: "",
     featured: true,
@@ -104,10 +125,10 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Vulnerability Remediation Pipeline",
+    title: "Enterprise Vulnerability Remediation",
     description:
-      "Automated scanning and remediation pipeline that resolved 98% of 12,000+ vulnerabilities across enterprise systems, integrated with Azure DevOps CI/CD.",
-    tech: ["Splunk", "VMWare", "Microsoft Admin Center", "PowerShell", "Altiris/Symantec"],
+      "Remediated 98% of 12,000 vulnerabilities across production-scale VMware infrastructure for Mars, Incorporated, improving security posture and uptime reliability.",
+    tech: ["Splunk", "VMWare", "Active Directory", "PowerShell", "Group Policy"],
     github: "",
     live: "",
     featured: true,
@@ -147,38 +168,37 @@ export const experience = [
   {
     id: 1,
     company: "Microsoft",
-    role: "Senior Software Engineer",
+    role: "Software Engineer",
     period: "August 2022 – December 2025",
     location: "Dallas, TX (Remote)",
     bullets: [
-      "Managed infrastructure for 1,300+ production servers, maintaining 99.9%+ availability across distributed services.",
-      "Reduced Mean Time to Detect (MTTD) by 20% through unified observability using Grafana and Azure Application Insights.",
-      "Built and owned YAML-based CI/CD pipelines in Azure DevOps for microservices deployed on Kubernetes.",
-      "Implemented Proof-of-Possession (PoP) token auth and mTLS across inter-service communication, hardening the security posture significantly.",
+      "Owned the design of a fault-tolerant distributed orchestration platform in C#/.NET Core managing configuration state transitions across 1,300+ production servers, enabling zero-downtime cloud migrations and eliminating unplanned maintenance windows.",
+      "Re-architected configuration-as-code and IaC pipelines to decouple cloud dependencies and add modular orchestration layers, reducing configuration-driven incidents and cutting deployment cycle time.",
+      "Built observability infrastructure with 30+ Grafana dashboards and 100+ alerts, improving MTTD and on-call response efficiency by 20% while meeting SLO targets.",
+      "Led platform security hardening: implemented OAuth 2.0 / MSAL, migrated from mTLS to Proof-of-Possession (PoP) tokens, and extended Azure NSGs to Redis, Key Vault, CosmosDB, and Blob Storage.",
+      "Partnered with infrastructure, security, and deployment teams on a Kubernetes (AKS) containerization strategy enabling horizontal scaling and standardized deployments.",
     ],
   },
   {
     id: 2,
     company: "Paycom",
-    role: "Software Engineer",
+    role: "Software Engineer – Full Stack",
     period: "June 2021 – August 2022",
     location: "Dallas, TX",
     bullets: [
-      "Boosted application performance by 25% through distributed caching (Redis), query optimization, and async processing.",
-      "Implemented OAuth 2.0 / JWT authentication for a multi-tenant SaaS HR platform serving thousands of business clients.",
-      "Contributed to platform engineering initiatives on Azure with Docker-containerized .NET Core services.",
+      "Led migration of critical modules from a legacy PHP MVC monolith to a React + Node.js architecture supporting high-concurrency enterprise workloads, delivering a 25% improvement in application performance.",
+      "Co-designed and delivered 3 customer-driven features used by hundreds of concurrent users, working with product, QA, and business stakeholders.",
     ],
   },
   {
     id: 3,
     company: "Tata Consultancy Services (TCS)",
-    role: "Software Engineer",
+    role: "Associate Systems Engineer",
     period: "June 2018 – June 2019",
     location: "Hyderabad, India",
     bullets: [
-      "Remediated 98% of 12,000+ identified security vulnerabilities across enterprise client systems.",
-      "Built RESTful APIs using .NET Core and Java for large-scale enterprise integrations.",
-      "Collaborated on distributed system architecture and database performance tuning (SQL Server, PostgreSQL).",
+      "Remediated 98% of 12,000 vulnerabilities across production-scale VMware infrastructure for Mars, Incorporated, improving system security and uptime reliability.",
+      "Managed Active Directory and Group Policy Objects (GPOs) across enterprise-scale environments, enforcing secure and reliable access control.",
     ],
   },
 ];
