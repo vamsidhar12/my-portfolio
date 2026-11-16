@@ -10,7 +10,7 @@ interface Props {
 
 export default function SectionWrapper({ id, children, className = "" }: Props) {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "0px 0px -40px 0px" });
 
   return (
     <section
@@ -19,9 +19,9 @@ export default function SectionWrapper({ id, children, className = "" }: Props) 
       className={`py-20 px-6 max-w-6xl mx-auto ${className}`}
     >
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       >
         {children}
       </motion.div>

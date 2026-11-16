@@ -32,7 +32,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: catIdx * 0.1 }}
+            transition={{ delay: catIdx * 0.04 }}
             className="bg-white dark:bg-gray-900 rounded-2xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow"
           >
             <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-4">
@@ -45,7 +45,7 @@ export default function Skills() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: catIdx * 0.1 + i * 0.05 }}
+                  transition={{ delay: catIdx * 0.04 + i * 0.015 }}
                   whileHover={{ scale: 1.05 }}
                   className={`text-xs font-medium px-3 py-1 rounded-full border ${
                     CATEGORY_COLORS[category] ?? defaultColor

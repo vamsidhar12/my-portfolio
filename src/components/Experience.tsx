@@ -12,33 +12,30 @@ export default function Experience() {
 
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-5 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 md:left-1/2" />
+        <div className="absolute left-5 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800" />
 
         <div className="space-y-12">
           {experience.map((exp, i) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5 }}
-              className={`relative flex gap-6 md:gap-0 ${
-                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -20px 0px" }}
+              transition={{ duration: 0.35 }}
+              className="relative flex"
             >
               {/* Dot */}
-              <div className="absolute left-5 w-3 h-3 rounded-full bg-indigo-600 border-2 border-white dark:border-gray-900 -translate-x-1/2 mt-1.5 md:left-1/2" />
-
-              {/* Spacer for desktop */}
-              <div className="hidden md:block md:w-1/2" />
+              <div className="absolute left-5 w-3 h-3 rounded-full bg-indigo-600 border-2 border-white dark:border-gray-900 -translate-x-1/2 mt-1.5" />
 
               {/* Card */}
-              <div
-                className={`ml-10 md:ml-0 md:w-1/2 ${
-                  i % 2 === 0 ? "md:pr-12" : "md:pl-12"
-                }`}
-              >
-                <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="ml-10 w-full">
+                <div
+                  className={`bg-white dark:bg-gray-900 rounded-2xl border p-6 hover:shadow-md transition-shadow ${
+                    i === 0
+                      ? "border-indigo-300 dark:border-indigo-700 shadow-md shadow-indigo-500/10 sm:p-8"
+                      : "border-gray-200 dark:border-gray-800 shadow-sm"
+                  }`}
+                >
                   <div className="flex items-start justify-between gap-4 mb-1">
                     <div>
                       <h3 className="text-base font-bold text-gray-900 dark:text-white">
